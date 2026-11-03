@@ -1,0 +1,38 @@
+打包指令
+
+步驟1
+
+建立純英文工作資料夾：
+打開命令提示字元 (CMD)，依序輸入以下指令，建立並進入 C 槽的 PyBuild 資料夾：
+
+
+cd \
+mkdir PyBuild
+cd PyBuild
+
+
+步驟2
+建立並啟動虛擬環境：(在同一個cmd視窗)
+輸入以下指令，建立一個與系統隔離的乾淨 Python 環境並啟動它：
+
+python -m venv venv
+venv\Scripts\activate
+
+步驟3
+
+重新安裝必要套件：(在同一個cmd視窗)
+在這個純英文環境中，重新下載打包所需的三個套件：
+pip install pyinstaller PyQt5 pynput
+
+
+複製檔案並執行打包：
+
+請打開電腦的檔案總管，將你桌面上的 pro_laser.py 複製並貼上到 C:\PyBuild 資料夾內。
+
+回到 CMD 視窗，執行打包指令：
+(在同一個cmd視窗)
+
+cd C:\PyBuild
+venv\Scripts\activate
+
+pyinstaller --noconsole --onefile --icon="red_dot.ico" pro_laser.py
